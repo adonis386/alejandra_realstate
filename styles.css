@@ -402,7 +402,7 @@ body {
     height: 100vh;
     min-height: 600px;
     overflow: hidden;
-    padding-top: 100px; /* Espacio optimizado para el header fijo */
+    padding-top: 140px; /* Espacio suficiente para el header fijo */
     margin-top: 0;
 }
 
@@ -410,6 +410,7 @@ body {
     position: relative;
     width: 100%;
     height: 100%;
+    overflow: visible;
 }
 
 .hero-image {
@@ -437,6 +438,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: visible;
 }
 
 .hero-content {
@@ -473,7 +475,7 @@ body {
     height: 100%;
     align-self: end;
     max-width: 100%;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .alejandra-header-container {
@@ -489,11 +491,12 @@ body {
     margin-bottom: 0;
     max-width: 100%;
     max-height: 100%;
+    z-index: 10;
 }
 
 .alejandra-header-image {
-    width: 350px;
-    height: 420px;
+    width: 450px;
+    height: 550px;
     object-fit: cover;
     border-radius: 25px;
     transition: transform 0.4s ease;
@@ -553,7 +556,7 @@ body {
     text-align: left;
     width: 100%;
     max-width: 600px;
-    margin-top: 0;
+    margin-top: 0;  
 }
 
 .hero-text-content p {
@@ -1714,17 +1717,7 @@ body {
     overflow: hidden;
 }
 
-.about-alejandra::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain-dark" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="%23ffffff" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23grain-dark)"/></svg>');
-    opacity: 0.3;
-    z-index: 1;
-}
+/* Eliminado el fondo de casas - fondo limpio */
 
 .about-alejandra .container {
     position: relative;
@@ -2271,57 +2264,149 @@ body {
         gap: 0.75rem;
     }
     
-    .hero-image-section {
-        height: 90vh;
-        min-height: 500px;
-        padding-top: 80px;
+    /* Hero Original Responsive */
+    .hero-original {
+        padding: 100px 0 60px;
     }
     
-    .hero-content {
+    .hero-container-original {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 3rem;
+        padding: 0 1rem;
+    }
+    
+    .hero-content-original {
         text-align: center;
         align-items: center;
-        min-height: 400px;
     }
     
-    .hero-text-content {
-        text-align: center;
-    }
-    
-    .hero-text-content h1 {
+    .hero-title-original {
         font-size: 2.5rem;
         text-align: center;
     }
     
+    .hero-subtitle-original {
+        text-align: center;
+        font-size: 1.1rem;
+    }
+    
+    .hero-form-original {
+        padding: 2rem;
+        margin: 0 1rem;
+    }
+    
+    .form-container-original h3 {
+        font-size: 1.5rem;
+    }
+    
+    .form-container-original p {
+        font-size: 1rem;
+    }
+    
+    .hero-image-section {
+        height: auto;
+        min-height: 90vh;
+        margin-top: 20px;
+        padding-bottom: 5rem;
+    }
+    
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        min-height: 70vh;
+        height: auto;
+        padding: 3rem 1rem;
+    }
+    
+    .hero-text-content {
+        text-align: center;
+        order: 1;
+        padding-top: 1rem;
+    }
+    
+    .hero-text-content h1 {
+        font-size: 2.2rem;
+        text-align: center;
+        margin-bottom: 1rem;
+        margin-top: 0;
+        padding: 0.75rem 0;
+    }
+    
     .hero-text-content p {
         text-align: center;
+        margin-bottom: 1.5rem;
+        font-size: 1.1rem;
     }
     
     .hero-text-content .hero-cta {
         text-align: center;
+        margin-bottom: 2rem;
+    }
+    
+    .hero-personal-touch {
+        display: none;
     }
     
     .alejandra-header-container {
-        align-self: center;
-        margin-top: 0;
-        transform: translateY(50px);
-        animation: slideInFromBottom 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s forwards;
+        display: none;
     }
     
     .alejandra-header-image {
-        width: 280px;
-        height: 350px;
+        display: none;
     }
     
-    @keyframes slideInFromBottom {
-        0% {
-            transform: translateY(50px);
-            opacity: 0;
+    /* Responsive adicional para pantallas muy pequeñas */
+    @media (max-width: 480px) {
+        .hero-image-section {
+            height: 100vh;
+            padding-top: 140px;
+            padding-bottom: 3rem;
+            min-height: 85vh;
         }
-        100% {
-            transform: translateY(0);
-            opacity: 1;
+        
+        .hero-content {
+            min-height: 60vh;
+            padding: 2rem 1rem;
+            gap: 2.5rem;
+        }
+        
+        .hero-text-content h1 {
+            font-size: 1.8rem;
+            padding: 0.5rem 0;
+        }
+        
+        .hero-text-content p {
+            font-size: 1rem;
+        }
+        
+        /* Hero Original Responsive para pantallas muy pequeñas */
+        .hero-original {
+            padding: 80px 0 40px;
+        }
+        
+        .hero-container-original {
+            padding: 0 0.5rem;
+        }
+        
+        .hero-title-original {
+            font-size: 2rem;
+        }
+        
+        .hero-subtitle-original {
+            font-size: 1rem;
+        }
+        
+        .hero-form-original {
+            padding: 1.5rem;
+            margin: 0 0.5rem;
+        }
+        
+        .form-container-original h3 {
+            font-size: 1.25rem;
         }
     }
     .hamburger {
