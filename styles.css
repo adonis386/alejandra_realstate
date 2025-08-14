@@ -401,8 +401,9 @@ body {
     position: relative;
     height: 80vh;
     min-height: 500px;
-    overflow: visible;
-    padding-top: 80px; /* Espacio para el header fijo */
+    overflow: hidden;
+    padding-top: 120px; /* Más espacio para el header fijo */
+    margin-top: 0;
 }
 
 .hero-image-container {
@@ -447,7 +448,8 @@ body {
     position: relative;
     z-index: 2;
     width: 100%;
-    min-height: 600px;
+    min-height: 500px;
+    max-height: 100%;
 }
 
 .hero-text-content {
@@ -468,6 +470,8 @@ body {
     position: relative;
     height: 100%;
     align-self: end;
+    max-width: 100%;
+    overflow: hidden;
 }
 
 .alejandra-header-container {
@@ -481,14 +485,18 @@ body {
     /* Posicionamiento en el "piso" del hero */
     margin-top: auto;
     margin-bottom: 0;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .alejandra-header-image {
-    width: 380px;
-    height: 480px;
+    width: 350px;
+    height: 420px;
     object-fit: cover;
     border-radius: 25px;
     transition: transform 0.4s ease;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .alejandra-header-container:hover .alejandra-header-image {
@@ -2293,8 +2301,8 @@ body {
     }
     
     .alejandra-header-image {
-        width: 320px;
-        height: 400px;
+        width: 280px;
+        height: 350px;
     }
     
     @keyframes slideInFromBottom {
