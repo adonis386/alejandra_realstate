@@ -402,7 +402,7 @@ body {
     height: 100vh;
     min-height: 600px;
     overflow: hidden;
-    padding-top: 140px; /* Espacio suficiente para el header fijo */
+    padding-top: 180px; /* Más espacio para el header fijo */
     margin-top: 0;
 }
 
@@ -462,7 +462,7 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    padding-top: 2rem;
+    padding-top: 3rem;
     height: 100%;
     align-self: start;
 }
@@ -482,7 +482,6 @@ body {
     position: relative;
     border-radius: 25px;
     overflow: hidden;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
     transform: translateX(100px);
     opacity: 0;
     animation: slideInFromRight 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s forwards;
